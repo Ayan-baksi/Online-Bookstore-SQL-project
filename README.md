@@ -8,7 +8,7 @@ Description:
 
 ⚪Ensured Data Integrity and Referential Consistency: Meticulously defined and enforced `PRIMARY KEY` and `FOREIGN KEY` constraints across all tables. This guarantees data accuracy, prevents inconsistencies, and maintains critical relationships between datasets, foundational for reliable transactional processing.
 
-⚪Implemented Automated Data Management: Utilized PostgreSQL sequences to automate the generation of unique identifiers for all primary keys, including book_id, customer_id, and order_id. This approach streamlines data entry, enhances system efficiency, and supports seamless scalability.
+⚪Implemented Automated Data Management: Utilized PostgreSQL sequences to automate the generation of unique identifiers for all primary keys, including `book_id`, `customer_id`, and `order_id`. This approach streamlines data entry, enhances system efficiency, and supports seamless scalability.
 
 ⚪Demonstrated Expertise in Database Definition Language (DDL): Proficiently executed DDL operations for database creation, table structuring, sequence management, and constraint definition. This highlights a strong command over foundational SQL for building and maintaining database architectures.
 
