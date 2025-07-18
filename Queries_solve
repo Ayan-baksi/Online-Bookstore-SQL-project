@@ -139,3 +139,30 @@ SELECT b.book_id, b.title, b.stock, COALESCE(SUM(o.quantity),0) AS Order_quantit
 FROM books b
 LEFT JOIN orders o ON b.book_id=o.book_id
 GROUP BY b.book_id ORDER BY b.book_id;
+
+
+--21) Find the top 3 customers who spent the most in total, using a CTE:
+
+WITH CustomerSpending AS (
+    SELECT c.customer_id, c.name, SUM(o.total_amount) AS Total_Spent
+    FROM orders o
+    JOIN customers c ON o.customer_id = c.customer_id
+    GROUP BY c.customer_id, c.name
+)
+SELECT * 
+FROM CustomerSpending
+ORDER BY Total_Spent DESC
+LIMIT 3;
+
+22) For each genre, find the book with the highest price using a CTE:
+
+WITH GenreMaxPrice AS (
+    SELECT genre, MAX(price) AS Max_Price
+    FROM books
+    GROUP BY genre
+)
+SELECT b.*
+FROM books b
+JOIN GenreMaxPrice gmp 
+  ON b.genre = gmp.genre AND b.price = gmp.Max_Price
+ORDER BY b.genre;
